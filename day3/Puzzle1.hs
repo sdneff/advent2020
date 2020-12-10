@@ -7,5 +7,5 @@ treeCountX :: [T.Text] -> Int -> Int
 treeCountX rows offset = length (filter isTree (zip rows (getOffsets offset)))
 
 main = do
-    rows <- readTrees "trees.txt"
-    putStrLn ("tree count: " ++ show (treeCountX rows 3))
+  rows <- readTrees "trees.txt"
+  putStrLn ("tree count: " ++ show (treeCountX rows 3))
