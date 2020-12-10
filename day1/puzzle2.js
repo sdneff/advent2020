@@ -23,7 +23,7 @@ function findSumTriplet(data, sum) {
   throw new Error('no match found');
 }
 
-const input = utils.parseInput('../expense_report.txt');
+const input = utils.parseInput('./expense_report.txt');
 const triplet = findSumTriplet(input, 2020);
 const product = utils.getProduct(triplet);
 

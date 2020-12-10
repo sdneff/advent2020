@@ -17,7 +17,7 @@ function findSumPair(data, sum) {
   throw new Error('no match found');
 }
 
-const input = utils.parseInput('../expense_report.txt');
+const input = utils.parseInput('./expense_report.txt');
 const pair = findSumPair(input, 2020);
 const product = utils.getProduct(pair);
 
