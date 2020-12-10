@@ -6,10 +6,10 @@ function findSumTriplet(data, sum) {
   const pairPool = new Map(); // track pair sums encountered so far: { <sum>: [v1, v2] }
 
   for (const val of data) {
-    const diff = sum - val;
-    // if pair pool has difference, we've hit our triplet
-    if (pairPool.has(diff)) {
-      return [val].concat(pairPool.get(diff));
+    const rem = sum - val;
+    // if pair pool has remainder, we've hit our triplet
+    if (pairPool.has(rem)) {
+      return [val].concat(pairPool.get(rem));
     } else {
       // remember sums encountered so far
       pool.forEach(v => {
