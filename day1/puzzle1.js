@@ -5,10 +5,10 @@ function findSumPair(data, sum) {
   const pool = new Set(); // track numbers encountered so far
 
   for (const val of data) {
-    const diff = sum - val;
-    // once we find our difference, we've got our pair
-    if (pool.has(diff)) {
-      return [diff, val];
+    const rem = sum - val;
+    // once we find our remainder, we've got our pair
+    if (pool.has(rem)) {
+      return [rem, val];
     } else {
       pool.add(val);
     }
