@@ -4,7 +4,7 @@ import qualified Data.Text    as T
 import qualified Data.Text.IO as TIO
 
 readTrees :: FilePath -> IO [T.Text]
-readTrees path = fmap T.lines (TIO.readFile "trees.txt")
+readTrees path = fmap T.lines (TIO.readFile path)
 
 isTree :: (T.Text, Int) -> Bool
 isTree (s,offset) = T.index s (offset `mod` (T.length s)) == '#'
