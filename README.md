@@ -7,3 +7,4 @@ Day
 2. JavaScript
 3. Haskell
 4. Haskell
+5. Lua
