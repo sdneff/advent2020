@@ -1,6 +1,3 @@
-import qualified Data.Text    as T
-import qualified Data.Text.IO as TIO
-
 import Utils
 
 isTotallyValid :: Passport -> Bool
@@ -18,10 +15,10 @@ isTotallyValid _ = False
 isMostlyValid :: Passport -> Bool
 isMostlyValid p = isTotallyValid (p { countryId=Just "" })
 
+main :: IO ()
 main = do
   passportStrings <- readPassportStrings "passports.txt"
   let passports = fmap parsePassport passportStrings
   let validPassports = filter isMostlyValid passports
   putStrLn ("passport count: " ++ show (length passports))
-  putStrLn ("totally valid passport count: " ++ show (length (filter isTotallyValid passports)))
-  putStrLn ("mostly valid passport count: " ++ show (length (filter isMostlyValid passports)))
+  putStrLn ("valid passport count: " ++ show (length validPassports))

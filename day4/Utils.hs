@@ -1,5 +1,6 @@
 module Utils where
 
+import Data.Char
 import qualified Data.Text    as T
 import qualified Data.Text.IO as TIO
 
@@ -23,8 +24,8 @@ splitWhen p xs = case dropWhile p xs of
 
 readPassportStrings :: FilePath -> IO [T.Text]
 readPassportStrings path = do
-  rawLines <- fmap T.lines (TIO.readFile path)
-  return (fmap (T.intercalate (T.pack " ")) (splitWhen (\t -> (T.length t) == 0) rawLines))
+    rawLines <- fmap T.lines (TIO.readFile path)
+    return (fmap (T.intercalate (T.pack " ")) (splitWhen (\t -> (T.length t) == 0) rawLines))
 
 lookupField :: [(String, String)] -> String -> Maybe String
 lookupField [] _ = Nothing
@@ -47,4 +48,13 @@ parsePassport s = Passport
     break' :: String -> (String, String)
     break' s = let (k, v) = (break (== ':') s) in (k, drop 1 v)
 
-    fs = map (\f -> break (== ':') f) (words (T.unpack s))
+    fs = map break' (words (T.unpack s))
+
+isNumeric :: String -> Bool
+isNumeric s = all isDigit s
+
+isWithin :: Int -> Int -> Int -> Bool
+isWithin min max val = val >= min && val <= max
+
+isLength :: Int -> String -> Bool
+isLength l s = length s == l
