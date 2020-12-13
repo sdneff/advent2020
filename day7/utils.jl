@@ -21,8 +21,8 @@ function loadRule(s::String, map::WeightedDirectedGraph, dir::GraphDirection)
     end
 
     # [("child bag", 4), ...]
-    members = [(m2[2], parse(Int, m2[1])) for m2 in
-                  (match(r"(\d+|no) ([\w ]+) bags?", member) for member in
+    members = [(m2[2], parse(Int, m2[1])) for m2 =
+                  (match(r"(\d+|no) ([\w ]+) bags?", member) for member =
                       split(contents, ", "))]
 
     for member = members

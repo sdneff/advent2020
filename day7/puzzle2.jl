@@ -6,7 +6,7 @@ function countContents(graph::WeightedDirectedGraph, key::String)
             return 0
         end
 
-        return sum([graph[k][c] * (1 + countChildren(c)) for c in keys(graph[k])])
+        return sum([graph[k][c] * (1 + countChildren(c)) for c = keys(graph[k])])
     end
 
     return countChildren(key)
