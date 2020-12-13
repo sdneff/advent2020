@@ -9,3 +9,4 @@ Day
 4. Haskell
 5. Lua
 6. Lua
+7. Julia
