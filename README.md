@@ -13,3 +13,4 @@ Day
 8. Julia
 9. Python
 10. Python
+11. Rust
