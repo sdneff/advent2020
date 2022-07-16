@@ -17,3 +17,6 @@ Day
 12. Rust
 13. C
 14. C
+
+
+\[Narrator\]: *At this point, Scott's Christmas spirit got the better of him. Cookies needed baking, trees decorating, all of which proved to be far merrier than this schtick.  So it goes.*
